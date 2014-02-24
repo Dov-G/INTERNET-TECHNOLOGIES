@@ -1,0 +1,94 @@
+html{
+	box-shadow: 1px 1px 1px #888888;
+	border-style:solid;
+	border-color:white;
+	border-width:5px
+}
+body {
+    font-size: 14px;
+    font-family: arial;
+    color: white;
+    background: #4aacc5;
+	
+}
+img { 
+	float: right; 
+	padding: 0 25px 25px 0; 
+	transform:rotate(7deg);
+	-ms-transform:rotate(7deg); 
+	-webkit-transform:rotate(7deg);
+}
+form {
+	text-align: center;
+	color: black;
+}
+input[type="button"],button {
+    width: 80px;
+    height: 25px;
+    color: #FFFFFF;
+    background: #4f81bc;  
+    border-color: #FFFFFF;
+    border-width: 2px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #888888;
+
+}
+login {
+	color: black;	
+}
+h1  {
+    text-decoration: underline;
+    font-size: 40px;
+}
+p {
+    font-size: 20px;
+}
+hr {
+    
+    background-color: black;
+    height: 2px; 
+    border: 0;
+    margin-left: -10;
+    margin-right: -10;
+    margin-top: 20;
+    margin-bottom: 20;
+
+}
+table {
+    border-spacing:1px;
+    border-style:solid;
+    border-width:2px;
+    border-color:#505050;
+    font:14px Georgia;
+    padding:0;
+    box-shadow:0px 0px #000000;
+    border-radius:10px;
+    margin: 0 auto;
+}
+ 
+th {
+    color:#FFFFFF;
+    background:#2C7EDB;
+    border-style:solid;
+    border-width:1px;
+    border-color:#505050;
+    border-radius:10px;
+    font-weight:bold;
+    padding:5px;
+    text-align:center;
+    vertical-align:top;
+}
+ 
+tr {
+    color:#FFFFFF;
+    font-weight:normal;
+}
+.somthing {
+    font-size: 18px;
+}
+textarea {
+    resize: none;
+    background-color: #FFFFFF;
+    border: 1px solid #D4D4D4;
+    padding: 4px;
+	}

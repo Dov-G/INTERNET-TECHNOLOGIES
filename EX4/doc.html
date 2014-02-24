@@ -1,0 +1,51 @@
+response tests:
+
+1.  writeHead() without headers as parameter only statues and message check that received date header as well as correct status.
+2.  writeHead() with headers parameter check received content type and date header.
+3.  setHeader() prior to writeHead().
+4.  setTimeOut() of response works.
+5.  removeHeader only removes wanted header.
+6.  write() without calling first write head, check that all headers are written before body.
+7.  write() after calling writeHead. 
+8.  end() check that is sends all the data and emits 'close' event
+9.  set() check that works with multiple calls and overrides.
+10. set() with object as a parameter.
+11. status() called with a number check that response sent with the matching reason
+12. status() check chaining commands works
+13. send() tested without parameters
+14. send() tested with a single parameter (int)
+15. send() tested with a single parameter (string)
+16. send() tested with a single parameter (Json)
+17. send() with two parameters number and string
+18. cookie() with name value and object as parameters
+19. cookie() witting cookie twice and check for default path
+20. test that different responses are independent of each other
+
+/************************************************************************************/
+
+miniHttp and miniExpress tests:
+
+1.  test use of use(root, static(...)) when receiving a good request
+2.  use() with non-existing resource, check returns 404
+3.  use() trying to access files outside of root folder, check returns 401
+4.  test that get() works and request contains correct method, protocol and path. test includes multiple requests 
+5.  test post(). request has extended path
+6.  test delete() also check that does not respond to wrong method of request,check variable url in root and two messages on single socket (also single chunk)
+7.  test put()
+8.  test receiving a request with a bad method, result '405 Method Not Allowed'
+9.  miniExpress receive a single request in chunks
+10. have miniExpress listen multiple times in different fashions and get requests on multiple sockets.
+11. tests the next()- has three listeners that the second does not call next check only the first two run
+12. miniExpress app works when used and defined in the alternative form
+13. test cookieParser() and the use without a given root
+14. have miniExpress receive a illegal request check that received 400 and server still running.
+15. check app.route
+16. test bodyParser ( which calls to test urlencoded) with multi variables spaces and arrays, also tests multiple params in request.
+17. test miniExpress request param() function returns parameters, body and query. 
+18. test running multiple servers.
+19. test server default and regular timeOut works default 2 minutes as written in API.
+
+Note: many things are/where tested through running a simple server and sending requests through the browser,
+	or running the list program given (list works without any changes other then require miniExpress).
+	Other things are tested automatically when other things work such as 'request' event, if event isn't
+	emitted the miniExpress wouldn't handle the request.
