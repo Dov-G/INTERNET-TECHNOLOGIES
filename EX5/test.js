@@ -381,15 +381,16 @@ function itemDeleteTest2() {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
             if (chunk == 'OK' && res.statusCode==200) {
-                console.log('logged in delete test\tPassed');
+                console.log('logged in delete test\t\tPassed');
             } else {
-                console.log('logged in delete test\tFailed');
+                console.log('logged in delete test\t\tFailed');
             }
         });
     });
     post_req.write(data);
     post_req.end();
 }
+
 function itemGetTest4() {
     var data = querystring.stringify({});
     var cookieStr = 'userName=name; sessionId='+uiid;
@@ -417,7 +418,33 @@ function itemGetTest4() {
     post_req.write(data);
     post_req.end();
 }
-
+function itemDeleteTest3() {
+    var data = querystring.stringify({});
+    var cookieStr = 'userName=name; sessionId='+uiid;
+    var options2 = {
+        host: DOMAIN,
+        port: PORT,
+        path: '/item/-1',
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Length': data.length,
+            'Cookie': cookieStr
+        }
+    };
+    var post_req2 = http.request(options2, function(res) {
+        res.setEncoding('utf8');
+        res.on('data', function (chunk) {
+            if (chunk == 'OK' && res.statusCode==200) {
+                console.log('delete all test\t\t\tPassed');
+            } else {
+                console.log('delete all test\t\t\tFailed');
+            }
+        });
+    });
+    post_req2.write(data);
+    post_req2.end();
+}
 function logedInTests(){
     itemPostTest2();
     itemGetTest2();
@@ -425,8 +452,10 @@ function logedInTests(){
     itemGetTest3();
     itemDeleteTest2();
     itemGetTest4();
+    itemPostTest2();
+    itemDeleteTest3();
 }
-//Cookie:userName=asdf; sessionId=94f41a90-cc51-4d59-b202-2a8cd7d3e896
+
 loginTest();
 itemPostTest();
 itemPutTest();
